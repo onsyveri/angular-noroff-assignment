@@ -10,6 +10,7 @@ import { TrainerPage } from './pages/trainer/trainer.page';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [ // Components
