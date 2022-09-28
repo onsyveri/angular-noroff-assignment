@@ -16,7 +16,7 @@ export class FavouriteButtonComponent implements OnInit {
 
   onFavouriteClick(): void {
     //Add pokemon to favourites/inventory 
-    alert("You cought: " + this.pokemonName)
+    alert("You caught: " + this.pokemonName)
   }
 
 }
