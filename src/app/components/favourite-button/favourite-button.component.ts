@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-favourite-button',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteButtonComponent implements OnInit {
 
+  @Input() pokemonName: string =""; 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onFavouriteClick(): void {
+    //Add pokemon to favourites/inventory 
+    alert("You cought: " + this.pokemonName)
   }
 
 }

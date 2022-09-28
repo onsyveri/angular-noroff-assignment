@@ -2,7 +2,7 @@
     <li>Test</li>
     <li *ngFor = "let pokemon of pokemons"> 
         <span>{{pokemon.name}}
-            <app-favourite-button></app-favourite-button>
+            <app-favourite-button [pokemonName]="pokemon.name"></app-favourite-button>
         </span></li>
     <li>Test</li>
 </ul>
