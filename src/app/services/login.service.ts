@@ -1,8 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, switchMap } from 'rxjs';
+import { map, Observable, of, switchMap, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { StorageKeys } from '../enums/storage-keys.enum';
 import { Trainer } from '../models/trainer.model';
+import { StorageUtil } from '../utils/storage.util';
 
 const { apiTrainers, apiKey } = environment;
 
@@ -22,13 +24,14 @@ export class LoginService {
             return this.createTrainer(username);
           }
           return of(trainer);
+        }),
+        tap((trainer: Trainer) => {
+          StorageUtil.storageSave<Trainer>(StorageKeys.Trainer, trainer);
         })
       )
   }
 
-  // Login
-
-  // Check if user exist
+  // Check if trainer exists
   private checkTrainerName(username: string): Observable<Trainer | undefined> {
     return this.http.get<Trainer[]>(`${apiTrainers}?username=${username}`)
       .pipe (
@@ -37,12 +40,12 @@ export class LoginService {
       )
   }
 
-  // IF NOT trainer - Create a trainer
+  // Create a trainer
   private createTrainer(username: string): Observable<Trainer> {
     
     const trainer = {
       username,
-      pokemons: []
+      pokemon: []
     };
     
     const headers = new HttpHeaders({
@@ -53,6 +56,4 @@ export class LoginService {
     return this.http.post<Trainer>(apiTrainers, trainer, { headers })
 
   }
-
-  // IF user || created user -> store user  
 }
