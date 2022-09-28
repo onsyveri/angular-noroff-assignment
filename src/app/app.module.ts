@@ -10,7 +10,8 @@ import { TrainerPage } from './pages/trainer/trainer.page';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component'
 
 @NgModule({
   declarations: [ // Components
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms'
     TrainerPage,
     LoginFormComponent,
     PokemonListComponent,
-    FavouriteButtonComponent
+    FavouriteButtonComponent,
+    NavbarComponent
   ],
   imports: [ // Modules
     BrowserModule,
