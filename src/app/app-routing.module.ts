@@ -15,7 +15,7 @@ const routes: Routes = [
         component: LoginPage
     },
     {
-        path: "pokemons",
+        path: "pokemon",
         component: PokemonCataloguePage
     },
     {
