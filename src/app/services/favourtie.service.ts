@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { finalize, Observable } from 'rxjs';
+import { finalize, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
@@ -29,7 +29,7 @@ export class FavourtieService {
   //get the pokemon based on the name 
 
   //patch request to our server  the user.id and the pokemon
-  public addToFavourites(pokemonName: string): Observable<any> {
+  public addToFavourites(pokemonName: string): Observable<Trainer> {
     console.log("clicked button test")
     
 
@@ -58,13 +58,17 @@ export class FavourtieService {
     this._loading = true; 
 
     
-return this.http.patch(`${apiTrainers}/${trainer.id}`, {
+return this.http.patch<Trainer>(`${apiTrainers}/${trainer.id}`, {
   pokemon : [...trainer.pokemon, pokemon.name]
 
 }, {
   headers
 })
 .pipe(
+  tap((updatedTrainer: Trainer) => {
+    this.trainerService.trainer = updatedTrainer; 
+
+  }),
   finalize(() => {
     this._loading = false; 
   })

@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
+import { Trainer } from 'src/app/models/trainer.model';
 import { FavourtieService } from 'src/app/services/favourtie.service';
 
 @Component({
@@ -32,7 +33,7 @@ export class FavouriteButtonComponent implements OnInit {
    
     //.......
     this.favourtieService.addToFavourites(this.pokemonName).subscribe({
-      next: (response: any) => {
+      next: (response: Trainer) => {
         console.log("NEXT", response); 
 
       }, 
