@@ -1,0 +1,20 @@
+<!--
+<ul>
+    <li>Test</li>
+    <li *ngFor = "let pokemon of pokemons"> 
+        <span>{{pokemon.name}}
+            <app-favourite-button [pokemonName]="pokemon.name"></app-favourite-button>
+        </span></li>
+    <li>Test</li>
+</ul>
+-->
+
+<!--testing style-->
+
+<div class="wrapper">
+    <div class="box" *ngFor = "let pokemon of pokemons">
+        <h2>{{pokemon.name}}</h2>
+        <img [src]="pokemon.sprites.front_default" alt="PokemonImage">
+        <app-favourite-button [pokemonName]="pokemon.name"></app-favourite-button>
+    </div>
+  </div>
