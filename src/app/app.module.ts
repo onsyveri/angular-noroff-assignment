@@ -23,8 +23,9 @@ import { FavouriteButtonComponent } from './components/favourite-button/favourit
   ],
   imports: [ // Modules
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

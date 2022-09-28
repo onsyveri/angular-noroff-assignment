@@ -26,9 +26,7 @@ export class LoginService {
       )
   }
 
-  // Login
-
-  // Check if user exist
+  // Check if trainer exists
   private checkTrainerName(username: string): Observable<Trainer | undefined> {
     return this.http.get<Trainer[]>(`${apiTrainers}?username=${username}`)
       .pipe (
@@ -37,12 +35,12 @@ export class LoginService {
       )
   }
 
-  // IF NOT trainer - Create a trainer
+  // Create a trainer
   private createTrainer(username: string): Observable<Trainer> {
     
     const trainer = {
       username,
-      pokemons: []
+      pokemon: []
     };
     
     const headers = new HttpHeaders({
@@ -53,6 +51,4 @@ export class LoginService {
     return this.http.post<Trainer>(apiTrainers, trainer, { headers })
 
   }
-
-  // IF user || created user -> store user  
 }
