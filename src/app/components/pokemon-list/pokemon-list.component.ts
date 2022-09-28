@@ -22,7 +22,7 @@ export class PokemonListComponent implements OnInit {
   //Alt method to fetch pokemons 
   ngOnInit(): void {
     this.pokemonService.getPokemonsAlt().subscribe((response: any) =>{
-      console.log(response)
+      console.log(this.pokemons)
       response.results.forEach((result: { name: string; }) => {
         this.pokemonService.getMorePokemonData(result.name).subscribe((response: any) => {
           this.pokemons.push(response);
