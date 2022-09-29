@@ -1,0 +1,52 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #CC0000;
+    width: 100%;
+    margin-bottom: 5ch;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    position: sticky;
+    top: 0;
+}
+
+span {
+    margin-left: 30px;
+    font-weight: bolder;
+    color: white;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 30.9px;
+}
+
+.pokemon {
+    border-bottom: 4px solid white;
+    border-radius: 0 0 0 4px;
+}
+
+.pokemon:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.pokemon:active {
+    background-color: white;
+}
+
+.trainer {
+    border-bottom: 4px solid #FFDE00;
+    border-radius: 0 0 4px 0;
+}
+
+.trainer:hover {
+    background-color: #b3a125;
+    color: black;
+}
