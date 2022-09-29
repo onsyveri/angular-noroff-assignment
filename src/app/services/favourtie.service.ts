@@ -41,8 +41,9 @@ export class FavourtieService {
     const trainer: Trainer = this.trainerService.trainer; 
     const pokemon : Pokemon | undefined = this.pokemonService.pokemonByName(pokemonName); 
     console.log("here " + pokemon?.name); 
-    console.log("here2 " + trainer.id)
-    console.log("here3: " + trainer.pokemon)
+    console.log("here2 " + trainer.id);
+    console.log("here3: " + trainer.pokemon);
+    console.log("here4: " + pokemonName);
     
 
     if(!pokemon){
