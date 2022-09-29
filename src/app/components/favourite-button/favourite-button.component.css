@@ -1,0 +1,16 @@
+button {
+    border-radius: 50%;
+    margin: 0;
+    padding: 0px;
+    border: none;
+    background-color: white;
+}
+
+span {
+    margin: 0 auto;
+    font-size: 35px;
+}
+
+span:hover {
+    color: red;
+}

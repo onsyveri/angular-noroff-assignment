@@ -1,0 +1,31 @@
+/*Styling of our pokemon grid */ 
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2ch;
+  column-gap: 4ch;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0px;
+}
+
+img {
+  margin: 0 auto;
+  width: 150px;
+}
+
+.box{
+  padding: 10px;
+  margin: 20px;
+  margin-top: 20px;
+  display: grid;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  /* box-shadow: 1px 2px 5px rgba(0,0,0,0.5); */
+}
+
+
