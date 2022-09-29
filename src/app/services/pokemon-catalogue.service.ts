@@ -27,7 +27,7 @@ export class PokemonCatalogueService {
 
   //Alternative method to display our pokemons
   getPokemonsAlt() {
-  return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=15`)
+  return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=151`)
   }
 
   //Alternative method cont. 
